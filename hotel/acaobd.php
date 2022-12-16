@@ -12,7 +12,7 @@ $acao = isset($_GET["acao"])?$_GET["acao"]:"";
 
 if ($acao == "excluir"){
     try{
-        $id = isset($_GET["idcliente"])?$_GET["idcliente"]:0;
+        $id = isset($_GET["id"])?$_GET["id"]:0;
 
         $conexao = new PDO(MYSQL_DSN,DB_USER,DB_PASSWORD);
         $query = "DELETE FROM cliente WHERE idcliente = :id";

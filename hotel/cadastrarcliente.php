@@ -60,7 +60,11 @@ if ($acao == "editar"){
     <br>
 
     <div class="d-flex justify-content-center">
-        <form method="post" enctype="multipart/form-data" name="myForm" action="acaobd.php">
+        <span id ="msg"></span>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <form method="post" enctype="multipart/form-data" id="cadU" name="cadU" action="acaobd.php">
             <fieldset>
                 <div class="form-floating mb-3">
                     <input type="text" readonly name="id" id="id" class="form-control" value=<?php if(isset($cliente)) echo $cliente["idcliente"]; else echo 0;?>>
@@ -83,10 +87,11 @@ if ($acao == "editar"){
                     <label for="telefone">Telefone</label>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-dark">Salvar</button>
+                    <button type="submit" class="btn btn-dark" name="envia">Salvar</button>
                 </div>
             </fieldset>
         </form>
     </div>
+    <script src="verificacliente.js"></script>
 </body>
 </html>

@@ -58,15 +58,20 @@ if ($acao == "editar"){
     </ul>
     <br>
     <br>
+
     <div class="d-flex justify-content-center">
-        <form method="post" enctype="multipart/form-data" name="myForm" action="acaobd2.php">
+        <span id ="msg"></span>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <form method="post" enctype="multipart/form-data" name="myForm" id="cadQ" action="acaobd2.php">
             <fieldset>
                 <div class="form-floating mb-3">
-                    <input type="text" readonly name="numero" id="numero" class="form-control" value=<?php if(isset($quarto)) echo $quarto["numero"]; else echo 0;?>>
+                    <input type="text" name="numero" id="numero" class="form-control" value=<?php if(isset($quarto)) echo $quarto["numero"]; else echo 0;?>>
                     <label for="numero">Numero</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" id="andar" name="andar" class="form-control" value=<?php if(isset($quarto)) echo $quarto["andar"]?>>
+                    <input type="number" id="andar" name="andar" class="form-control" value=<?php if(isset($quarto)) echo $quarto["andar"]?>>
                     <label for="andar">Andar</label>
                 </div>
                 <div class="form-floating mb-3">
@@ -81,10 +86,11 @@ if ($acao == "editar"){
                 </div>
                     <br>
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-dark">Salvar</button>
+                    <button type="submit" class="btn btn-dark" name="envia">Salvar</button>
                 </div>
             </fieldset>
         </form>
     </div>
+    <script src="verificaquarto.js"></script>
 </body>
 </html>
