@@ -77,7 +77,7 @@ if(isset($_SESSION["usuario"])){
                         
                         echo "<tr><th>IdCliente</th><th>Nome</th><th>Email</th><th>Cpf</th><th>Telefone</th><th>Editar</th><th>Excluir</th></tr>";
                         foreach($clientes as $cliente){
-                            $editar = "<a href=cadastrarcliente.php?acao=editar&numero=".$cliente["idcliente"].">Alt</a>";
+                            $editar = "<a href=cadastrarcliente.php?acao=editar&id=".$cliente["idcliente"].">Alt</a>";
                             $excluir = "<a href='acaobd.php?acao=excluir&id=".$cliente["idcliente"]."'>Exc</a>";;
                             echo "<tr><td>".$cliente["idcliente"]."</td>"."<td>".$cliente["nome"]."</td>"."<td>".$cliente["email"]."</td>"."<td>".$cliente["cpf"]."</td>"."<td>".$cliente["telefone"]."</td><td>$editar</td>"."<td>$excluir</td>"."</tr>";
                         }
