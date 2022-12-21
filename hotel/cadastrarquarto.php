@@ -67,7 +67,7 @@ if ($acao == "editar"){
         <form method="post" enctype="multipart/form-data" name="myForm" id="cadQ" action="acaobd2.php">
             <fieldset>
                 <div class="form-floating mb-3">
-                    <input type="text" name="numero" id="numero" class="form-control" value=<?php if(isset($quarto)) echo $quarto["numero"]; else echo 0;?>>
+                    <input type="text" name="numero" readonly id="numero" class="form-control" value=<?php if(isset($quarto)) echo $quarto["numero"]; else echo 0;?>>
                     <label for="numero">Numero</label>
                 </div>
                 <div class="form-floating mb-3">

@@ -34,7 +34,7 @@ if($andar != "" && $capacidade != "" && $ocupacao != ""){
     try{
         $conexao = new PDO(MYSQL_DSN,DB_USER,DB_PASSWORD);
 
-        if($numero > 0){
+        if($numero < 0){
             $query = "UPDATE quarto SET andar = :andar, capacidade = :capacidade, ocupacao = :ocupacao WHERE numero = :numero";
         }else{
             $query = "INSERT INTO quarto (andar, capacidade, ocupacao) VALUES(:andar, :capacidade, :ocupacao)";
@@ -46,7 +46,7 @@ if($andar != "" && $capacidade != "" && $ocupacao != ""){
         $stmt->bindValue(":capacidade",$capacidade);
         $stmt->bindValue(":ocupacao",$ocupacao);
     
-        if($numero > 0){
+        if($numero < 0){
             $stmt->bindValue(":numero",$numero);
         }
 
